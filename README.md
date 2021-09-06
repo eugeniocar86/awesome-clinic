@@ -9,20 +9,11 @@ Used tecnologies
 * Docker engine 20.10.7
 * PosgreSQL
 
+## Run Demo Deployed on EC2
+http://ec2-18-221-2-241.us-east-2.compute.amazonaws.com:8080/
+
 
 ## Installation
-
-Navigating to /django folder run
-
-```bash
-docker build .
-```
-
-Navigating to /angular folder run
-
-```bash
-docker build .
-```
 
 In root directory run
 ```bash
@@ -62,8 +53,4 @@ python manage.py runserver 0.0.0.0:80
 ### Default ports
 Frontend is running by :8080 port
 Backend is running at development server by port 80 
-```
-
-
-
 
