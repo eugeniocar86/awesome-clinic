@@ -32,11 +32,6 @@ docker-compose up
 Make sure every dependency is correctly installed 
 /django/requirements.txt
 
-if not run the following, with docker instance running: 
-```bash
-docker exec -it dj bash
-pip install *dependency-name*
-```
 
 ## Database migrations
 With docker instance running run the following: 
@@ -57,6 +52,12 @@ For running locally navigate to /angular/awclinic-app/ and run:
 ng serve 
 ```
 Now go to http://localhost:4200 with default port
+
+### Django API
+For running locally navigate to /django/ and run:
+```bash
+python manage.py runserver 0.0.0.0:80
+```
 
 ### Default ports
 Frontend is running by :8080 port
