@@ -1,0 +1,14 @@
+table {
+    width: 100%;
+    margin-bottom: 20px !important;
+  }
+
+table td
+{
+  cursor: pointer;
+}
+
+.viewed_row
+{
+  background: rgb(209, 209, 250);
+}

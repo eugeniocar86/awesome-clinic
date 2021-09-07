@@ -1,0 +1,105 @@
+<mat-card>
+    <mat-card-title>User Registration</mat-card-title>
+    <mat-card-subtitle>Register to login on our app</mat-card-subtitle>
+
+    <form [formGroup]="valForm"  (submit)="submitForm($event, valForm.value)">
+        <mat-form-field class="input-form-out">
+            <input formControlName="first_name" matInput type="text" class="form-input" placeholder="First Name">
+    
+            <mat-hint>First Name</mat-hint>
+    
+            <mat-error *ngIf="valForm.controls['first_name'].hasError('required') && (valForm.controls['first_name'].dirty || valForm.controls['first_name'].touched)">
+              First name is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="input-form-out">
+            <input formControlName="last_name" matInput type="text" class="form-input" placeholder="Last Name">
+    
+            <mat-hint>Last Name</mat-hint>
+    
+            <mat-error *ngIf="valForm.controls['last_name'].hasError('required') && (valForm.controls['last_name'].dirty || valForm.controls['last_name'].touched)">
+              Last name is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="input-form-out">
+            <input formControlName="email" matInput type="email" class="form-input" placeholder="Email">
+    
+            <mat-hint>Email</mat-hint>
+    
+            <mat-error *ngIf="valForm.controls['email'].hasError('required') && (valForm.controls['email'].dirty || valForm.controls['email'].touched)">
+              Email is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="input-form-out">
+            <input formControlName="address" matInput type="text" class="form-input" placeholder="address">
+    
+            <mat-hint>Address specify street and number</mat-hint>
+    
+            <mat-error *ngIf="valForm.controls['address'].hasError('required') && (valForm.controls['address'].dirty || valForm.controls['address'].touched)">
+              Address is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="input-form-out">
+            <span matPrefix>+1 &nbsp;</span>
+            <input formControlName="phone" matInput type="number" class="form-input" placeholder="555-555-1234">
+    
+            <mat-hint>Telephone Number</mat-hint>
+    
+            <mat-error *ngIf="valForm.controls['phone'].hasError('required') && (valForm.controls['phone'].dirty || valForm.controls['phone'].touched)">
+              Phone is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="input-form-out"> 
+            <input formControlName="username" matInput type="text" class="form-input" placeholder="Username">
+    
+            <mat-hint>Username</mat-hint>
+    
+            <mat-error *ngIf="valForm.controls['username'].hasError('required') && (valForm.controls['username'].dirty || valForm.controls['username'].touched)">
+              Username is <strong>required</strong>
+            </mat-error>
+    
+            <mat-error *ngIf="valForm.controls['username'].hasError('username') && (valForm.controls['username'].dirty || valForm.controls['username'].touched)">                                          Debe ser un correo electrónico valido
+            </mat-error>
+        </mat-form-field>
+    
+        <mat-form-field class="input-form-out">
+            <input formControlName="password1" matInput type="password" class="form-input" placeholder="Password">
+    
+            <mat-hint>Password</mat-hint>
+    
+            <mat-error *ngIf="valForm.controls['password1'].hasError('required') && (valForm.controls['password1'].dirty || valForm.controls['password1'].touched)">
+              Password is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+       <mat-form-field class="input-form-out">
+            <input formControlName="password2" matInput type="password" class="form-input" placeholder="Repeat password">
+    
+            <mat-hint>Repeat password</mat-hint>
+    
+            <mat-error *ngIf="valForm.controls['password2'].hasError('required') && (valForm.controls['password2'].dirty || valForm.controls['password2'].touched)">
+              Repeat password is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+    
+        <br>
+        <span> Already have an account <a class="btn-f-width btn-separated"  routerLink="/login">Login here</a> </span>
+
+        <br>
+        <div class="errors">
+
+          {{ errors }}
+
+        </div>
+    
+        <button mat-raised-button color="primary" type="submit" class="btn-f-width btn-separated" style="margin-top: 20px;">Register</button>
+    
+        <mat-spinner *ngIf="showSpinner" [diameter]="40" style="margin-top: 20px;"></mat-spinner>
+      </form>
+
+</mat-card>

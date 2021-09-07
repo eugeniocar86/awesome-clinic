@@ -1,0 +1,44 @@
+<h1 mat-dialog-title>Create a new awesome appointment</h1>
+<div mat-dialog-content>
+
+    <form [formGroup]="valForm"  (submit)="submitForm($event, valForm.value)">
+        <mat-form-field appearance="fill" class="input-form-out">
+            <mat-label>Doctor</mat-label>
+            <mat-select formControlName="doctor_id">
+              <mat-option *ngFor="let doctor of doctors" [value]="doctor.id">
+                {{ doctor.name }}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="input-form-out">
+            <mat-label>Branch Address</mat-label>
+            <mat-select formControlName="branch_id">
+              <mat-option *ngFor="let branch of branches" [value]="branch.id">
+                {{ branch.address }}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="input-form-out">
+            <mat-label>Medical Specialty</mat-label>
+            <mat-select formControlName="specialty_id">
+              <mat-option *ngFor="let sp of specialties" [value]="sp.id">
+                {{ sp.name }}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="input-form-out">
+            <mat-label>Choose a date</mat-label>
+            <input formControlName="date_appointment" matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-spinner *ngIf="showSpinner" [diameter]="40" style="margin-top: 20px;"></mat-spinner>
+
+        <button mat-raised-button color="primary" type="submit" class="btn-f-width btn-separated" style="margin-top: 20px;">Create</button>
+      </form>
+      
+</div>

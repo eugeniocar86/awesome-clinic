@@ -1,0 +1,40 @@
+<mat-card>
+    <mat-card-title>Login</mat-card-title>
+    <mat-card-subtitle>Login to access all your benefits</mat-card-subtitle>
+
+    <form [formGroup]="valForm"  (submit)="submitForm($event, valForm.value)">
+        <mat-form-field class="input-form-out"> 
+            <input formControlName="username" matInput type="text" class="form-input" placeholder="Username">
+    
+            <mat-hint>Username</mat-hint>
+    
+            <mat-error *ngIf="valForm.controls['username'].hasError('required') && (valForm.controls['username'].dirty || valForm.controls['username'].touched)">
+              Username is <strong>required</strong>
+            </mat-error>
+    
+            <mat-error *ngIf="valForm.controls['username'].hasError('username') && (valForm.controls['username'].dirty || valForm.controls['username'].touched)">                                          Debe ser un correo electrónico valido
+            </mat-error>
+        </mat-form-field>
+    
+        <mat-form-field class="input-form-out">
+            <input formControlName="password" matInput type="password" class="form-input" placeholder="Password">
+    
+            <mat-hint>Password</mat-hint>
+    
+            <mat-error *ngIf="valForm.controls['password'].hasError('required') && (valForm.controls['password'].dirty || valForm.controls['password'].touched)">
+              Password is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+    
+        <br>
+        <span> Dont have an account? <a class="btn-f-width btn-separated"  routerLink="/register">Sing up here</a> </span>
+
+        <br>
+    
+        <button mat-raised-button color="primary" type="submit" [disabled]="disabledButton" class="btn-f-width btn-separated" style="margin-top: 20px;"> Login </button>
+    
+        <mat-spinner *ngIf="showSpinner" [diameter]="40" style=" margin-top: 20px;"></mat-spinner>
+      </form>
+
+</mat-card>
+

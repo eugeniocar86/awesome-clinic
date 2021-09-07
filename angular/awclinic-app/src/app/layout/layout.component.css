@@ -1,0 +1,79 @@
+.user-block
+{
+    min-width: 100px;
+    height: 180px;
+    padding-top: 30px;
+	background: var(--main-color); ;
+
+}
+
+.example-container
+{
+    min-height: 94vh !important; 
+    background:rgba(0, 0, 0, 0.02);
+}
+
+.sidenav_awc
+{
+    border: none;
+    width: 185px !important;
+    overflow: hidden;;
+    min-width: 185px !important;
+}
+
+.user_image
+{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid #CCC;
+    margin: 0 auto;
+	display: block;
+	
+}
+
+.user_rol
+{
+    color: black;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.user_name
+{
+    color: black;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 2px;
+    text-align: center;
+}
+
+
+.badge
+{
+	position: absolute;
+	background: #f87986;
+	width: 17px;
+	height: 17px;
+	text-align: center;
+	border-radius: 50%;
+	top: 9px;
+	right: 52px;
+	z-index: 1;
+}
+
+.badge span
+{   
+	margin-top: -7px;
+	display: block;
+	font-weight: bold;
+	font-size: 12px;
+	color: white;
+}
+
+.my-menu
+{
+    font-size: 14px;
+}

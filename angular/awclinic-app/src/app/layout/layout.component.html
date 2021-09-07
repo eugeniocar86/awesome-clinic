@@ -1,0 +1,31 @@
+
+<mat-toolbar class="mat-elevation-z3" style="z-index: 2; position: relative; font-family: Source Sans Pro; background: white">
+
+    <button mat-icon-button style="margin-right: 30px;" (click)="open_menu();" id="openmenu">
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <span style="font-family: Roboto, 'Helvetica Neue', sans-serif">Awesome clinic</span>
+
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container" >
+
+    <mat-sidenav class="menu2 mat-elevation-z3 sidenav_awc animated fadeIn" #sidenav mode="side" [(opened)]="opened">
+
+        <mat-selection-list [multiple]="false">
+            <mat-list-option class="my-menu"  *ngFor="let item of appitems" [value]="item.label" (click)="selectedItem(item.link)">
+              {{item.label}}
+            </mat-list-option>
+        </mat-selection-list>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+
+        <router-outlet>
+        </router-outlet>
+
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

@@ -1,0 +1,52 @@
+<mat-card>
+    
+    <mat-card-title>Appointments</mat-card-title>
+    <mat-card-subtitle>Schedule and review your awesome appointments</mat-card-subtitle>
+
+    <button mat-raised-button color="primary" (click)="create_appointment()" class="btn-f-width btn-separated" style="margin-bottom: 10px; float:right;"> Schedule appointment </button>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element" (click)="view_appointment(element.id)" [ngClass]="{'viewed_row': element.viewed}"> {{element.id}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="doctor_name">
+          <th mat-header-cell *matHeaderCellDef> Doctor </th>
+          <td mat-cell *matCellDef="let element" (click)="view_appointment(element.id)" [ngClass]="{'viewed_row': element.viewed}"> {{element.doctor_name}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="specialty_name">
+          <th mat-header-cell *matHeaderCellDef> Specialty </th>
+          <td mat-cell *matCellDef="let element" (click)="view_appointment(element.id)" [ngClass]="{'viewed_row': element.viewed}"> {{element.specialty_name}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="branch_address">
+          <th mat-header-cell *matHeaderCellDef> Branch Address </th>
+          <td mat-cell *matCellDef="let element" (click)="view_appointment(element.id)" [ngClass]="{'viewed_row': element.viewed}"> {{element.branch_address}} </td>
+        </ng-container>
+
+         <ng-container matColumnDef="date_appointment">
+            <th mat-header-cell *matHeaderCellDef> Date Appointent </th>
+            <td mat-cell *matCellDef="let element" (click)="view_appointment(element.id)" [ngClass]="{'viewed_row': element.viewed}"> {{element.date_appointment}} </td>
+          </ng-container>
+
+
+
+          <ng-container matColumnDef="borrar">
+            <th mat-header-cell *matHeaderCellDef> - </th>
+            <td mat-cell *matCellDef="let element" [ngClass]="{'viewed_row': element.viewed}"> <button (click)="delete_appointment(element.id)" mat-icon-button  aria-label="Delete selected appointment">
+                <mat-icon>delete</mat-icon>
+              </button> </td>
+          </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+
+    
+
+
+</mat-card>
